@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ThemeContext } from "./Context/GlobalContext";
-
+import video from "../assets/8783355-hd_1920_1080_30fps.mp4";
 export default function MovieDetails() {
   let { id } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
@@ -78,14 +78,18 @@ export default function MovieDetails() {
                 Watch the trailer:
               </h4>
               <video
-                src="../assets/8783355-hd_1920_1080_30fps.mp4"
+                src={video}
                 className="w-full rounded-lg shadow-md my-3"
                 alt="trailer"
+                muted
+                autoPlay
+                playsInline
               />
             </div>
           </div>
         </div>
-      ) : (        <div className="flex justify-center items-center h-screen">
+      ) : (
+        <div className="flex justify-center items-center h-screen">
           <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
         </div>
       )}
