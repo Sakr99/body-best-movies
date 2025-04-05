@@ -83,10 +83,10 @@ export default function Home() {
                 />
 
                 <div className="absolute top-0 left-0 right-0 flex justify-between items-center px-3 py-1 rounded-t-lg">
-                  <span className="bg-red-600 text-white text-xs md:text-sm px-2 py-0.5 rounded">
+                  <span className="bg-red-600 text-white text-sm px-4 py-0.5 rounded">
                     4K
                   </span>
-                  <span className="bg-green-400 text-black text-xs md:text-sm px-2 py-0.5 rounded flex items-center gap-1">
+                  <span className="bg-green-400 text-black text-sm px-4 py-0.5 rounded flex items-center gap-1">
                     <i className="fa-solid fa-star text-yellow-400"></i>
                     {movie.rating?.average || "N/A"}
                   </span>

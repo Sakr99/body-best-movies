@@ -18,8 +18,8 @@ export default function Navbar() {
   }, [theme]);
 
   return (
-    <nav className="flex flex-wrap items-center justify-between p-4 bg-white text-black dark:bg-gray-800 dark:text-white">
-      <div className="container mx-auto flex flex-wrap items-center justify-between">
+    <nav className="w-full bg-white text-black dark:bg-gray-800 dark:text-white">
+      <div className="container mx-auto flex items-center justify-between flex-wrap lg:flex-nowrap p-4">
         {/* Logo */}
         <Link
           className="text-2xl font-bold flex items-center gap-4 hover:text-gray-400"
@@ -153,45 +153,55 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Sidebar (when menuOpen is true) */}
       {menuOpen && (
-        <div className="w-full flex flex-col items-center space-y-2 mt-2 lg:hidden">
-          <Link
-            className="hover:text-gray-400 dark:hover:text-gray-300"
-            to="home"
-            onClick={() => setMenuOpen(false)}
-          >
-            Home
-          </Link>
-          <Link
-            className="hover:text-gray-400 dark:hover:text-gray-300"
-            to="movies"
-            onClick={() => setMenuOpen(false)}
-          >
-            Movies
-          </Link>
-          <Link
-            className="hover:text-gray-400 dark:hover:text-gray-300"
-            to="favourites"
-            onClick={() => setMenuOpen(false)}
-          >
-            Favourites
-          </Link>
-          <Icon />
-          <Link
-            className="hover:text-gray-400 dark:hover:text-gray-300"
-            to="login"
-            onClick={() => setMenuOpen(false)}
-          >
-            Login
-          </Link>
-          <Link
-            className="hover:text-gray-400 dark:hover:text-gray-300"
-            to="signIn"
-            onClick={() => setMenuOpen(false)}
-          >
-            Sign in
-          </Link>
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-end lg:hidden">
+          <div className="w-64 bg-white dark:bg-gray-800 p-4">
+            <button
+              className="text-2xl text-white"
+              onClick={() => setMenuOpen(false)}
+            >
+              ✕
+            </button>
+            <div className="flex flex-col space-y-4 mt-4">
+              <Link
+                className="text-lg text-black dark:text-white hover:text-gray-400"
+                to="home"
+                onClick={() => setMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
+                className="text-lg text-black dark:text-white hover:text-gray-400"
+                to="movies"
+                onClick={() => setMenuOpen(false)}
+              >
+                Movies
+              </Link>
+              <Link
+                className="text-lg text-black dark:text-white hover:text-gray-400"
+                to="favourites"
+                onClick={() => setMenuOpen(false)}
+              >
+                Favourites
+              </Link>
+              <Icon />
+              <Link
+                className="text-lg text-black dark:text-white hover:text-gray-400"
+                to="login"
+                onClick={() => setMenuOpen(false)}
+              >
+                Login
+              </Link>
+              <Link
+                className="text-lg text-black dark:text-white hover:text-gray-400"
+                to="signIn"
+                onClick={() => setMenuOpen(false)}
+              >
+                Sign in
+              </Link>
+            </div>
+          </div>
         </div>
       )}
     </nav>
