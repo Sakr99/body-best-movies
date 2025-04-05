@@ -13,9 +13,7 @@ body {
     @apply text-inherit no-underline;
   }
 
-  input {
-    @apply bg-gray-700 text-white;
-  }
+
 
 .image-container{
     position: relative;
