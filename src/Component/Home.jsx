@@ -1,7 +1,8 @@
 import axios from "axios";
-import React, { useState, useEffect, useContext, useCallback } from "react";
+import { useState, useEffect, useContext, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "./Context/GlobalContext";
+import MotionStyle from "./MotionStyle";
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
@@ -67,35 +68,36 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {movies.map((movie, i) => (
           <div key={i} className="group relative">
             <Link to={`/movieDetails/${movie.id}`}>
-              <div className="overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
-                <img
-                  src={
-                    movie.image?.medium ||
-                    "https://via.placeholder.com/210x295?text=No+Image"
-                  }
-                  className="w-full object-cover"
-                  alt="Poster Movie"
-                />
+              <MotionStyle>
+                <div className="overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                  <img
+                    src={
+                      movie.image?.medium ||
+                      "https://via.placeholder.com/210x295?text=No+Image"
+                    }
+                    className="w-full object-cover"
+                    alt="Poster Movie"
+                  />
 
-                <div className="absolute top-0 left-0 right-0 flex justify-between items-center px-3 py-1 rounded-t-lg">
-                  <span className="bg-red-600 text-white text-sm px-4 py-0.5 rounded">
-                    4K
-                  </span>
-                  <span className="bg-green-400 text-black text-sm px-4 py-0.5 rounded flex items-center gap-1">
-                    <i className="fa-solid fa-star text-yellow-400"></i>
-                    {movie.rating?.average || "N/A"}
-                  </span>
+                  <div className="absolute top-0 left-0 right-0 flex justify-between items-start px-3 py-2 rounded-t-lg">
+                    <span className="bg-red-500 text-white text-sm md:text-lg font-semibold px-3 py-1 md:px-6 md:py-2 rounded-full shadow-sm">
+                      4K
+                    </span>
+                    <span className="bg-green-700 text-wh text-sm md:text-lg font-semibold px-3 py-1 md:px-6 md:py-2 rounded-full flex items-center gap-1 shadow-sm">
+                      <i className="fa-solid fa-star text-yellow-400"></i>
+                      {movie.rating?.average || "N/A"}
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </MotionStyle>
             </Link>
           </div>
         ))}
-      </div>
+      </div>{" "}
     </div>
   );
 }

@@ -152,10 +152,8 @@ export default function Navbar() {
           </Link>
         </div>
       </div>
-
-      {/* Mobile Sidebar (when menuOpen is true) */}
       {menuOpen && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-end lg:hidden">
+        <div className="fixed inset-0 z-50 bg-black/80  bg-opacity-20 flex justify-end lg:hidden">
           <div className="w-64 bg-white dark:bg-gray-800 p-4">
             <button
               className="text-2xl text-white"

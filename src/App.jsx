@@ -15,22 +15,22 @@ const App = () => {
   return (
     <>
       <ContextProvider>
-        <ThemeProvider>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="home" element={<Home />} />
-            <Route path="movies" element={<Movies />} />
-            <Route path="favourites" element={<Favourites />} />
-            <Route path="movieDetails" element={<MovieDetails />}>
-              <Route path=":id" element={<MovieDetails />} />
-            </Route>
-            <Route path="login" element={<Login />} />
-            <Route path="signIn" element={<SignIn />} />
-            <Route path="*" element={<Notfound />} />
-          </Routes>
-          <Footer />
-        </ThemeProvider>
+          <ThemeProvider>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="home" element={<Home />} />
+              <Route path="movies" element={<Movies />} />
+              <Route path="favourites" element={<Favourites />} />
+              <Route path="movieDetails" element={<MovieDetails />}>
+                <Route path=":id" element={<MovieDetails />} />
+              </Route>
+              <Route path="login" element={<Login />} />
+              <Route path="signIn" element={<SignIn />} />
+              <Route path="*" element={<Notfound />} />
+            </Routes>
+            <Footer />
+          </ThemeProvider>
       </ContextProvider>
     </>
   );
